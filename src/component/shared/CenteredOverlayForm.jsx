@@ -5,13 +5,13 @@ import { OverlayWrapper } from '../OverlayWrapper';
 export function CenteredOverlayForm({ title, children, handleSubmit, validated }) {
     return (
             <StyledCentralizedContainer>
-                <StyledHeader>Dutch Pay</StyledHeader>
+                <StyledLogo>Dutch Pay</StyledLogo>
                 <OverlayWrapper>
                     <Container>
                         <Form noValidate validated={validated} onSubmit={handleSubmit}>
                             <StyledRow>
                                 <Row className="aligin-items-start">
-                                    <StyledH2>{title}</StyledH2>
+                                    <StyledTitle>{title}</StyledTitle>
                                 </Row>
                                 <Row className="aligin-items-center">
                                     {children}
@@ -29,7 +29,7 @@ export function CenteredOverlayForm({ title, children, handleSubmit, validated }
     );
 }
 
-const StyledHeader = styled.h1`
+const StyledLogo = styled.h1`
     letter-spacing: -0.05em;
     font-weight: 10px
 `;
@@ -45,7 +45,7 @@ const StyledCentralizedContainer = styled(Container)`
     align-items: center;
 `;
 
-export const StyledH2 = styled.h2`
+const StyledTitle = styled.h2`
     font-weight: 700;
     line-height: 35px;
     
@@ -54,7 +54,7 @@ export const StyledH2 = styled.h2`
     word-break: keep-all;
 `;
 
-export const StyledSubmitButton = styled(Button).attrs({
+const StyledSubmitButton = styled(Button).attrs({
     type: 'submit',
 })`
     background-color: #6610F2;
@@ -67,7 +67,7 @@ export const StyledSubmitButton = styled(Button).attrs({
     }
 `;
 
-export const StyledRow = styled(Row)`
+const StyledRow = styled(Row)`
     height: 60vh;
     justify-content: center;
     align-items: center;
